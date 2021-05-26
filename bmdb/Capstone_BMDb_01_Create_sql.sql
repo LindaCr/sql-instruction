@@ -40,7 +40,11 @@ CONSTRAINT act_mov unique (ActorID, MovieID)
 -- Add some movies
  insert into Movie VALUES
  	(1, 'Revenge of the Nerds', 1984, 'R', 'Jeff Kanew'),
- 	(2, 'Avengers Infinity War', 2018, 'PG-13', 'Anthony Russo, John Russo');
+ 	(2, 'Avengers Infinity War', 2018, 'PG-13', 'Anthony Russo, John Russo'),
+    (3, '10 Things I Hate About You', 1999, 'PG-13', 'Gil Junger'),
+    (4, 'The Fast and the Furious', 2001, 'PG-13', 'Rob Cohen'),
+    (5, 'A Night at the Roxbury', 1998, 'PG-13', 'John Fortenberry'),
+    (6, 'Napolean Dynamite', 2004, 'PG', 'Jared Hess');
     
 -- Add some actors
  insert into Actor VALUES
@@ -48,7 +52,8 @@ CONSTRAINT act_mov unique (ActorID, MovieID)
  	(2, 'Chris', 'Hemsworth', 'M', '1983-09-11'),
     (3, 'Scarlett', 'Johansson', 'F', '1984-11-22'),
  	(4, 'Robert', 'Carradine', 'M', '1954-3-24'),
- 	(5, 'Anthony', 'Edwards', 'M', '1962-7-19');
+ 	(5, 'Anthony', 'Edwards', 'M', '1962-7-19'),
+    (6, 'Heath', 'Ledger', 'M', '1979-04-04');
     
 -- Add movie credits for actors
  insert into Credit (ActorID, MovieID, Role) VALUES
