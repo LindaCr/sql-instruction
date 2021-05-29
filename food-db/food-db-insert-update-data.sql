@@ -15,7 +15,11 @@ insert into orderticket (ID, customerid) values
 insert into lineitem values
 	(4, 2, 11, 2),
     (5, 3, 12, 2),
-    (6, 4, 21, 4);
+    (6, 4, 21, 4),
+    (7, 4, 1, 2),
+    (8, 4, 6, 1),
+    (9, 4, 2, 1);
+    
 
 update orderticket
 	set total= 23.98
@@ -27,6 +31,10 @@ update orderticket
     
 update orderticket
 	set total= 11.96
+    where id= 4;
+    
+update orderticket
+	set total= 45.92
     where id= 4;
 
 
