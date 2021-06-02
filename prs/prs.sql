@@ -42,7 +42,7 @@ DateNeeded			date				not null,
 DeliveryMode		varchar(25)			not null,
 Status				varchar(20)			not null,
 Total				decimal(10,2)		not null,
-SubmittedDate		datetime			not null,
+SubmittedDate		timestamp			not null default current_timestamp,
 ReasonForRejection	varchar(100),
 
 Foreign Key (UserID) references User(ID)
@@ -106,6 +106,17 @@ insert into product (VendorID, PartNumber, Name, Price, Unit) values
     (3, '504308', 'Swingline Desktop Stapler', 7.99, '1'),
     (4, 'B0788F3R8X', 'Keurig K-elite Coffee Maker Single Serve Brushed Silver', 139.99, '1'),
     (4, 'B088TDDJRF', 'SMUGDESK Ergonomic Swivel Office Chair with Wheels and Arms', 72.99, '1');
+    
+insert into Request (UserID, Description, Justification, DateNeeded, DeliveryMode, Status, Total) values
+	(2, 'HDMI cable', 'old cord frayed', '2021/06/10', 'Delivery', 'New', 24.99),
+    (5, 'Dell Laptop', 'new hire needs for work', '2021/07/01', 'Pickup', 'New', 579.99),
+    (3, 'Stapler', 'need for reports', '2021/06/24', 'Delivery', 'New', 7.99);
+    
+insert into LineItem (RequestID, ProductID, Quantity) values
+	(1, 9, 1),
+    (2, 7, 1),
+    (3, 13, 1);
+	
     
     
 
