@@ -1,19 +1,13 @@
 -- create and select the database
-use master;
-go
-alter database bmdb set single_user with rollback immediate
-go
 DROP DATABASE IF EXISTS bmdb;
-go
 CREATE DATABASE bmdb;
-go
 USE bmdb;
-go
+
 
 -- create Movie table
 -- DROP TABLE IF EXISTS Movie;
 Create table Movie (
-ID 			int		 		primary key identity (1,1),
+ID 			integer		 	primary key auto_increment,
 Title 		varchar(255) 	not null unique,
 Year 		int		 		not null,
 Rating 		varchar(5) 		not null,
@@ -24,7 +18,7 @@ Director 	varchar(255) 	not null
 -- create Actor table
 -- DROP TABLE IF EXISTS Actor;
 Create table Actor (
-ID 			int		 		primary key identity (1,1),
+ID 			integer		 	primary key auto_increment,
 FirstName 	varchar(255) 	not null,
 LastName 	varchar(255) 	not null,
 Gender 		varchar(1) 		not null,
@@ -35,10 +29,10 @@ CONSTRAINT unq_actor unique (FirstName, LastName, BirthDate)
 -- create Credits table
 -- business rule - combo of actor+movie must be unique
 Create table Credit (
-ID 				int		 			primary key identity (1,1),
-ActorID 		int		 			not null,
-MovieID 		int		 			not null,
-Role		 	varchar(255)		not null,
+ID 				integer		 			primary key auto_increment,
+ActorID 		integer		 			not null,
+MovieID 		integer		 			not null,
+Role		 	varchar(255)		    not null,
 Foreign Key (ActorID) references Actor(ID),
 Foreign Key (MovieID) references Movie(ID),
 CONSTRAINT act_mov unique (ActorID, MovieID)
